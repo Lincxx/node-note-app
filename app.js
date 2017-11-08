@@ -9,7 +9,7 @@ var user = os.userInfo();
 console.log(user)
 
 //option 2
-fs.appendFileSync('greetings.txt', 'Hello There');
+fs.appendFileSync('greetings.txt', `Hello ${user.username}!`);
 
 
 
