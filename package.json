@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Lincxx/node-note-app/issues"
   },
-  "homepage": "https://github.com/Lincxx/node-note-app#readme"
+  "homepage": "https://github.com/Lincxx/node-note-app#readme",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }
