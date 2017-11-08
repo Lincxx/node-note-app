@@ -11,5 +11,5 @@ console.log(user)
 //option 2
 fs.appendFileSync('greetings.txt', `Hello ${user.username}!`);
 
-
+//comment
 
