@@ -18,7 +18,15 @@ console.log('YARGS ',  argv);
 
 if(command === 'add'){
     //add a new note
-    notes.addNote(argv.title, argv.body);
+   var note = notes.addNote(argv.title, argv.body);
+   if(note) {
+       console.log('Note was created');
+       console.log('---');
+       console.log(`Title: ${note.title}` );
+       console.log(`Body: ${note.body}` );
+   } else {
+       console.log('The title already exists');
+   }
 } else if(command === 'list'){
     //show notes
    notes.getAll();
