@@ -32,10 +32,22 @@ if(command === 'add'){
    notes.getAll();
 } else if(command === 'read'){
     //read note
-    notes.getNote(argv.title);
+    var note = notes.getNote(argv.title);
+    if(note){
+        console.log('---');
+        console.log(`Title: ${note.title}` );
+        console.log(`Body: ${note.body}` );
+    } else {
+        console.log('---');
+        console.log('No note was found' );
+    }
 } else if(command === 'remove'){
     //remove note
-    notes.removeNote(argv.title);
+    var noteRemoved = notes.removeNote(argv.title);
+    var message = noteRemoved ? 'Note was removed' : 'No note was removed';
+    console.log('---');
+    console.log(message);
+
 } else {
     console.log('Command not recognized');
 }

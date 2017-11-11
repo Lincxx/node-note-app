@@ -41,10 +41,23 @@ var getAll = () => {
 
 var getNote = (title) => {
     console.log('Fetching note: ', title);
+    //fetch notes
+    var notes = fetchNotes()
+    //filter the matching note/s
+    var foundNote = notes.filter((note) => note.title === title)
+    console.log(foundNote)
+    //return that note only the first item
+    return foundNote[0];
 }
 
 var removeNote = (title) => {
-    console.log('Removing note: ', title);
+    //fetch the notes
+    var notes = fetchNotes()
+    //filter note, removing the one with title of arg..this will filter out the unwanted note
+    var filteredNotes = notes.filter((note) => note.title !== title);
+    //save new notes array
+    saveNotes(filteredNotes)
+    return notes.length !== filteredNotes.length;
 }
 
 //es5
