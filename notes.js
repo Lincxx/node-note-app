@@ -60,6 +60,15 @@ var removeNote = (title) => {
     return notes.length !== filteredNotes.length;
 }
 
+var logNote = (note) =>{
+    //break on this line and use repl to output note
+    //debugger;
+    // use the read command to read a note
+    console.log('----');
+    console.log(`Title: ${note.title}` );
+    console.log(`Body: ${note.body}` );
+}
+
 //es5
 // module.exports = {
 //     addNote: addNote
@@ -71,5 +80,6 @@ module.exports = {
     addNote,
     getAll,
     getNote,
-    removeNote
+    removeNote,
+    logNote
 }

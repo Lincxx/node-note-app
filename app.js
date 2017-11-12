@@ -21,9 +21,7 @@ if(command === 'add'){
    var note = notes.addNote(argv.title, argv.body);
    if(note) {
        console.log('Note was created');
-       console.log('---');
-       console.log(`Title: ${note.title}` );
-       console.log(`Body: ${note.body}` );
+       notes.logNote(note);
    } else {
        console.log('The title already exists');
    }
@@ -34,9 +32,7 @@ if(command === 'add'){
     //read note
     var note = notes.getNote(argv.title);
     if(note){
-        console.log('---');
-        console.log(`Title: ${note.title}` );
-        console.log(`Body: ${note.body}` );
+        notes.logNote(note);
     } else {
         console.log('---');
         console.log('No note was found' );
@@ -45,7 +41,7 @@ if(command === 'add'){
     //remove note
     var noteRemoved = notes.removeNote(argv.title);
     var message = noteRemoved ? 'Note was removed' : 'No note was removed';
-    console.log('---');
+    console.log('----');
     console.log(message);
 
 } else {
